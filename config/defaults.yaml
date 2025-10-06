@@ -1,0 +1,26 @@
+paths:
+  raw_capture: data/raw/traffic_capture.json
+  clustered_output: data/processed/clustered_traffic.json
+  cowrie_log: logs/cowrie.json
+  cowrie_summary: data/processed/cowrie_summary.json
+  pipeline_log: logs/pipeline.log
+
+capture:
+  enabled: true
+  interface: eth0
+  packet_count: 500
+  filter: tcp
+
+clustering:
+  n_clusters: 2
+  random_state: 42
+
+honeypot:
+  enable_redirects: false
+  dry_run: true
+  service_port: 22
+  honeypot_host: 127.0.0.1
+  honeypot_port: 2222
+
+analysis:
+  parse_cowrie: true
